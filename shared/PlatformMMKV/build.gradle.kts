@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
-
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
@@ -46,7 +44,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.tencent:mmkv-static:1.2.10")
+                implementation(TENCENT.mmkv_static)
             }
         }
         val iosX64Main by getting {

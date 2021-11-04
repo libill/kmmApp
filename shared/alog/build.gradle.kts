@@ -44,7 +44,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("com.tencent.mars:mars-xlog:1.2.6")
+                implementation(TENCENT.mars_xlog)
             }
         }
         val iosX64Main by getting {

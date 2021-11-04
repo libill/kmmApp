@@ -1,4 +1,4 @@
-An app architecture for Kotlin/Native on Android/iOS. Use Kotlin Multiplatform Mobile.
+An app architecture for Kotlin/Native on Android/iOS. Use Kotlin Multiplatform Mobile.Support multiple modules.
 
 ![](images/kmm-app-architecture.png)
 
@@ -27,7 +27,3 @@ App层：Android的依赖无变化，依赖aar或者jar；iOS依赖sdkframework�
 3、[KMM 求生日记二：Kotlin/Native 被踩中的坑](https://mp.weixin.qq.com/s/e3k5JcxG1FvGlNkOyjNIFw)
 
 4、PlatformMMKV参考[KNDemo](https://github.com/River418/KNDemo)
-
-其他：微信讨论群
-
-![](images/wechat_group.png)

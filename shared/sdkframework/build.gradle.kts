@@ -27,6 +27,10 @@ kotlin {
         compilations.get("main").kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
     }
 
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.CInteropProcess::class.java) {
+        settings.extraOpts(listOf("-compiler-option", "-DNS_FORMAT_ARGUMENT(A)="))
+    }
+
     cocoapods {
         summary = "Some description for the Shared Module"
         homepage = "Link to the Shared Module homepage"

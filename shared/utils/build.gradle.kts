@@ -41,7 +41,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("androidx.startup:startup-runtime:1.1.0")
+                implementation(AndroidX.startup_runtime)
             }
         }
         val iosX64Main by getting {
