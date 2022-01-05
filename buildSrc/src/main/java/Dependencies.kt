@@ -1,11 +1,13 @@
 object Versions {
-    const val kotlinGradlePlugin = "1.6.0-RC"
+    const val kotlinGradlePlugin = "1.6.10"
     const val buildGradle = "4.1.3"
 
     const val startup_runtime = "1.1.0"
 
     const val mmkv_static = "1.2.10"
     const val mars_xlog = "1.2.6"
+
+    const val dokka = "1.6.10"
 }
 
 object TENCENT {

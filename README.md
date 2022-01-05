@@ -18,6 +18,14 @@ App层：Android的依赖无变化，依赖aar或者jar；iOS依赖sdkframework�
 
 了解更多请查看[Kotlin/Native KMM项目架构](https://libill.github.io/2021/10/14/Kotlin-Native-KMM-app-architecture/)
 
+其他：
+
+用[dokka](https://github.com/Kotlin/dokka)生成代码文档
+
+```
+./gradlew dokkaHtmlMultiModule
+```
+
 参考链接：
 
 1、[kmm-getting-started](https://kotlinlang.org/docs/kmm-getting-started.html)

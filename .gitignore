@@ -92,3 +92,4 @@ xcschemes
 
 *.podspec
 *.DS_Store
+.docs
