@@ -11,6 +11,12 @@ buildscript {
         classpath("com.android.tools.build:gradle:${Versions.buildGradle}")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:${Versions.dokka}")
     }
+    configurations.all {
+        resolutionStrategy {
+        }
+        resolutionStrategy.cacheDynamicVersionsFor(0, "seconds")
+        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+    }
 }
 
 allprojects {
@@ -19,6 +25,12 @@ allprojects {
         mavenCentral()
         jcenter()
         maven(url ="https://jitpack.io")
+    }
+    configurations.all {
+        resolutionStrategy {
+        }
+        resolutionStrategy.cacheDynamicVersionsFor(0, "seconds")
+        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
     }
 }
 

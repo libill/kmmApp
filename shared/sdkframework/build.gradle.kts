@@ -84,7 +84,7 @@ android {
 tasks.named<org.jetbrains.kotlin.gradle.tasks.DefFileTask>("generateDefMMKV").configure {
     doLast {
         println("generateDefMMKV start")
-        val includeDir = File(projectDir, "build/cocoapods/synthetic/IOS/sdkframework/Pods/MMKV/iOS/MMKV/MMKV")
+        val includeDir = File(projectDir, "build/cocoapods/synthetic/IOS/Pods/MMKV/iOS/MMKV/MMKV")
         val headers = listOf("${includeDir.path}/MMKV.h")
         headers.forEach {
             println("generateDefMMKV hearder:$it")
