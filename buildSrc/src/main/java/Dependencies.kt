@@ -1,5 +1,5 @@
 object Versions {
-    const val kotlinGradlePlugin = "1.7.0-Beta"
+    const val kotlinGradlePlugin = "1.7.0-RC"
     const val buildGradle = "4.1.3"
 
     const val startup_runtime = "1.1.0"
