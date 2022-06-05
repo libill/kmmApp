@@ -25,18 +25,18 @@ kotlin {
         }
     }
 
-    // Create a task to build a kmmfeedback framework.
-    tasks.register<FatFrameworkTask>("releaseIOSFramework") {
-        // The fat framework must have the same base name as the initial frameworks.
-        baseName = "SDKFramework"
-        // The default destination directory is "<build directory>/fat-framework".
-        destinationDir = buildDir.resolve("ios_frameworks")
-        // Specify the frameworks to be merged.
-        from(
-            iosX64.binaries.getFramework("RELEASE"),
-            iosArm64.binaries.getFramework("RELEASE")
-        )
-    }
+//    // Create a task to build a kmmfeedback framework.
+//    tasks.register<FatFrameworkTask>("releaseIOSFramework") {
+//        // The fat framework must have the same base name as the initial frameworks.
+//        baseName = "SDKFramework"
+//        // The default destination directory is "<build directory>/fat-framework".
+//        destinationDir = buildDir.resolve("ios_frameworks")
+//        // Specify the frameworks to be merged.
+//        from(
+//            iosX64.binaries.getFramework("RELEASE"),
+//            iosArm64.binaries.getFramework("RELEASE")
+//        )
+//    }
 
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         compilations.get("main").kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
