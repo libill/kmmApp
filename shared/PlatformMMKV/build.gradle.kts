@@ -33,7 +33,9 @@ kotlin {
 
         pod("MMKV", "1.2.8")
 
-        frameworkName = "PlatformMMKV"
+        framework {
+            baseName = "PlatformMMKV"
+        }
     }
     
     sourceSets {

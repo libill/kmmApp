@@ -32,7 +32,9 @@ kotlin {
         }
         ios.deploymentTarget = "13.5"
 
-        frameworkName = "utils"
+        framework {
+            baseName = "utils"
+        }
     }
     
     sourceSets {

@@ -32,7 +32,9 @@ kotlin {
         }
         ios.deploymentTarget = "13.5"
 
-        frameworkName = "alog"
+        framework {
+            baseName = "alog"
+        }
 
         pod("CocoaLumberjack")
     }
