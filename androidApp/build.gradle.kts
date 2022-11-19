@@ -12,11 +12,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdkVersion(AndroidVersion.compileSdk)
     defaultConfig {
         applicationId = "com.libill.kmm.android"
-        minSdkVersion(19)
-        targetSdkVersion(30)
+        minSdkVersion(AndroidVersion.minSdk)
+        targetSdkVersion(AndroidVersion.targetSdk)
         versionCode = 1
         versionName = "1.0"
     }

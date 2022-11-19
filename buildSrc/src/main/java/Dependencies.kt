@@ -1,5 +1,5 @@
 object Versions {
-    const val kotlinGradlePlugin = "1.7.0"
+    const val kotlinGradlePlugin = "1.7.21"
     const val buildGradle = "4.1.3"
 
     const val startup_runtime = "1.1.0"
@@ -7,7 +7,7 @@ object Versions {
     const val mmkv_static = "1.2.10"
     const val mars_xlog = "1.2.6"
 
-    const val dokka = "1.6.20"
+    const val dokka = "1.7.20"
 }
 
 object TENCENT {
@@ -17,4 +17,10 @@ object TENCENT {
 
 object AndroidX {
     val startup_runtime = "androidx.startup:startup-runtime:${Versions.startup_runtime}"
+}
+
+object AndroidVersion {
+    const val minSdk = 24
+    const val compileSdk = 32
+    const val targetSdk = 32
 }
