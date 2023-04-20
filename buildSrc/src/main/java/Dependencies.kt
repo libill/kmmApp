@@ -1,6 +1,6 @@
 object Versions {
-    const val kotlinGradlePlugin = "1.7.21"
-    const val buildGradle = "4.1.3"
+    const val kotlinGradlePlugin = "1.8.20"
+    const val buildGradle = "7.3.0"
 
     const val startup_runtime = "1.1.0"
 
@@ -11,12 +11,12 @@ object Versions {
 }
 
 object TENCENT {
-    val mmkv_static = "com.tencent:mmkv-static:${Versions.mmkv_static}"
-    val mars_xlog = "com.tencent.mars:mars-xlog:${Versions.mars_xlog}"
+    const val mmkv_static = "com.tencent:mmkv-static:${Versions.mmkv_static}"
+    const val mars_xlog = "com.tencent.mars:mars-xlog:${Versions.mars_xlog}"
 }
 
 object AndroidX {
-    val startup_runtime = "androidx.startup:startup-runtime:${Versions.startup_runtime}"
+    const val startup_runtime = "androidx.startup:startup-runtime:${Versions.startup_runtime}"
 }
 
 object AndroidVersion {

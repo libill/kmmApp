@@ -11,8 +11,8 @@ plugins {
 }
 
 kotlinDslPluginOptions {
-    experimentalWarning.set(false)
+//    experimentalWarning.set(false)
 
-    jvmTarget.set("1.8")
+    jvmTarget.set("11")
 
 }
