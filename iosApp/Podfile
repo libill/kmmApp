@@ -7,8 +7,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def shared_pods()
 # https://kotlinlang.org/docs/native-cocoapods.html#use-a-kotlin-gradle-project-as-a-cocoapods-dependency
-#   use_frameworks!
-  use_modular_headers!
+  # Use it if Xcode run
+  use_frameworks!
+  # Use it if releaseIOSFramework
+#  use_modular_headers!
   platform :ios, '13.5'
 
   pod 'sdkframework', :path => '../shared/sdkframework'

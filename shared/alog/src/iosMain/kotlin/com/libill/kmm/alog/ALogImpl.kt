@@ -4,6 +4,7 @@ import cocoapods.CocoaLumberjack.*
 import platform.Foundation.NSDocumentDirectory
 import platform.Foundation.NSSearchPathForDirectoriesInDomains
 import platform.Foundation.NSUserDomainMask
+import kotlin.ULong.Companion.MIN_VALUE
 
 /**
  * ALogImpl实现不用生成头文件，类修饰需要加上internal
@@ -52,6 +53,6 @@ internal actual class ALogImpl actual constructor() : IALog {
     }
 
     private fun toMessage(tag: String, message: String, level: DDLogLevel, flag: DDLogFlag): DDLogMessage {
-        return DDLogMessage(message, level, flag, 0, "", null, 0, tag, 0, null)
+        return DDLogMessage(message, level, flag, 0, "", null, MIN_VALUE, tag, 0, null)
     }
 }
