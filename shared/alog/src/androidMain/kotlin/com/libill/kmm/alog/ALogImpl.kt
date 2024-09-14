@@ -6,6 +6,7 @@ import com.tencent.mars.xlog.Xlog
 
 internal actual class ALogImpl actual constructor() : IALog {
 
+    private var isDebug  = false
     private val logPath = "${appContext.cacheDir}/alog"
     private val logFileName = "app_xlog"
 
@@ -17,7 +18,7 @@ internal actual class ALogImpl actual constructor() : IALog {
 
     private fun initXLog() {
         Log.setLogImp(Xlog())
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             Log.setConsoleLogOpen(true)
             Log.appenderOpen(Xlog.LEVEL_DEBUG, Xlog.AppednerModeAsync, "", logPath, logFileName, 0)
         } else {

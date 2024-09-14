@@ -62,10 +62,15 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(AndroidVersion.compileSdk)
+    compileSdk = AndroidVersion.compileSdk
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(AndroidVersion.minSdk)
-        targetSdkVersion(AndroidVersion.targetSdk)
+        minSdk = AndroidVersion.minSdk
+        targetSdk = AndroidVersion.targetSdk
+    }
+    namespace = "com.libill.kmm.alog"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }

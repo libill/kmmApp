@@ -2,8 +2,8 @@ repositories {
     gradlePluginPortal()
     google()
     mavenCentral()
-    jcenter()
-    maven(url ="https://jitpack.io")
+    maven(url = "https://jitpack.io")
+    maven(url = "https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
 }
 
 plugins {
@@ -13,6 +13,6 @@ plugins {
 kotlinDslPluginOptions {
 //    experimentalWarning.set(false)
 
-    jvmTarget.set("11")
+    jvmTarget.set("17")
 
 }

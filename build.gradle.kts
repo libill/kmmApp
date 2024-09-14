@@ -3,8 +3,8 @@ buildscript {
         gradlePluginPortal()
         google()
         mavenCentral()
-        jcenter()
         maven(url ="https://jitpack.io")
+        maven(url = "https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinGradlePlugin}")
@@ -23,8 +23,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter()
         maven(url ="https://jitpack.io")
+        maven(url = "https://mirrors.cloud.tencent.com/nexus/repository/maven-public")
     }
     configurations.all {
         resolutionStrategy {
