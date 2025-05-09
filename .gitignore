@@ -87,6 +87,7 @@ lint/tmp/
 
 Pods
 Podfile.lock
+iosApp.xcodeproj
 iosApp.xcworkspace
 xcschemes
 

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 import org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask
 
 plugins {
@@ -11,7 +12,7 @@ plugins {
 version = "$version"
 
 kotlin {
-    android()
+    androidTarget()
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
     targets {
@@ -22,6 +23,16 @@ kotlin {
                 export(project(":PlatformMMKV"))
                 export(project(":business"))
             }
+        }
+    }
+
+    val xcf = XCFramework()
+    val iosTargets = listOf(iosX64, iosArm64)
+
+    iosTargets.forEach {
+        it.binaries.framework {
+            baseName = "PlatformMMKV"
+            xcf.add(this)
         }
     }
 
@@ -39,7 +50,7 @@ kotlin {
 //    }
 
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
-        compilations.get("main").kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
+        compilations["main"].kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.CInteropProcess::class.java) {
@@ -60,7 +71,7 @@ kotlin {
             baseName = "SDKFramework"
         }
 
-        pod("MMKV", "1.2.8")
+        pod("MMKV", "2.2.1")
         pod("CocoaLumberjack")
     }
 
@@ -83,7 +94,9 @@ kotlin {
             }
         }
         val iosArm64Main by getting {
-            dependsOn(iosX64Main)
+            kotlin.srcDir("src/iosMain")
+            dependencies {
+            }
         }
     }
 }

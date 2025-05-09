@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
@@ -8,7 +10,7 @@ plugins {
 version = "$version"
 
 kotlin {
-    android()
+    androidTarget()
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
     targets {
@@ -31,7 +33,7 @@ kotlin {
         }
         ios.deploymentTarget = "13.5"
 
-        pod("MMKV", "1.2.8")
+        pod("MMKV", "2.2.1")
 
         framework {
             baseName = "PlatformMMKV"
@@ -50,13 +52,16 @@ kotlin {
                 implementation(TENCENT.mmkv_static)
             }
         }
+
         val iosX64Main by getting {
             kotlin.srcDir("src/iosMain")
             dependencies {
             }
         }
         val iosArm64Main by getting {
-            dependsOn(iosX64Main)
+            kotlin.srcDir("src/iosMain")
+            dependencies {
+            }
         }
     }
 }

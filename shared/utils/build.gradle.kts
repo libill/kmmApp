@@ -19,8 +19,7 @@ kotlin {
         }
     }
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
-        compilations.get("main").kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
-
+        compilations["main"].kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
     }
 
     cocoapods {
@@ -54,7 +53,9 @@ kotlin {
             }
         }
         val iosArm64Main by getting {
-            dependsOn(iosX64Main)
+            kotlin.srcDir("src/iosMain")
+            dependencies {
+            }
         }
     }
 }

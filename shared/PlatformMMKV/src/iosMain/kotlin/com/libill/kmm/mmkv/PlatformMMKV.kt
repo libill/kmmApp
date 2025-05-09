@@ -2,15 +2,18 @@ package com.libill.kmm.mmkv
 
 import cocoapods.MMKV.MMKV
 import com.libill.kmm.alog.ALog
+import kotlinx.cinterop.ExperimentalForeignApi
 
+@OptIn(ExperimentalForeignApi::class)
 actual class PlatformMMKV actual constructor(
-    configFileName: String?,
-    relativePath: String?
+    val configFileName: String?,
+    val relativePath: String?
 ) {
     private var mmkvInstance: MMKV
 
     init {
         MMKV.initialize()
+        MMKV.initializeMMKV(relativePath)
         val mConfigFileName = configFileName ?: "a"
         mmkvInstance = mmkvWithId(mConfigFileName, relativePath)
     }

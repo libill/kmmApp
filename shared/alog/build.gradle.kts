@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
     kotlin("multiplatform")
@@ -10,16 +10,18 @@ plugins {
 version = "$version"
 
 kotlin {
-    android()
+    androidTarget()
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
     targets {
         configure(listOf(iosX64, iosArm64)) {
+            binaries.framework {
+                baseName = "alog"
+            }
         }
     }
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
-        compilations.get("main").kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
-
+        compilations["main"].kotlinOptions.freeCompilerArgs += "-Xexport-kdoc"
     }
 
     cocoapods {
@@ -56,7 +58,9 @@ kotlin {
             }
         }
         val iosArm64Main by getting {
-            dependsOn(iosX64Main)
+            kotlin.srcDir("src/iosMain")
+            dependencies {
+            }
         }
     }
 }

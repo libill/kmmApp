@@ -10,7 +10,7 @@ plugins {
 version = "$version"
 
 kotlin {
-    android()
+    androidTarget()
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
     targets {
@@ -49,14 +49,14 @@ kotlin {
             dependencies {
             }
         }
-        val iosX64Main by getting {
-            kotlin.srcDir("src/iosMain")
-            dependencies {
-            }
-        }
-        val iosArm64Main by getting {
-            dependsOn(iosX64Main)
-        }
+//        val iosX64Main by getting {
+//            kotlin.srcDir("src/iosMain")
+//            dependencies {
+//            }
+//        }
+//        val iosArm64Main by getting {
+//            dependsOn(iosX64Main)
+//        }
     }
 }
 

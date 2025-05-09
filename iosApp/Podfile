@@ -14,7 +14,7 @@ def shared_pods()
   platform :ios, '13.5'
 
   pod 'sdkframework', :path => '../shared/sdkframework'
-  pod 'MMKV', '1.2.8'
+  pod 'MMKV', '2.2.1'
   pod 'CocoaLumberjack'
 end
 

@@ -1,6 +1,7 @@
 package com.libill.kmm.alog
 
 import cocoapods.CocoaLumberjack.*
+import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSDocumentDirectory
 import platform.Foundation.NSSearchPathForDirectoriesInDomains
 import platform.Foundation.NSUserDomainMask
@@ -9,8 +10,8 @@ import kotlin.ULong.Companion.MIN_VALUE
 /**
  * ALogImpl实现不用生成头文件，类修饰需要加上internal
  */
+@OptIn(ExperimentalForeignApi::class)
 internal actual class ALogImpl actual constructor() : IALog {
-
     private val dLog = DDLog
     private val asynchronousLog = true
 

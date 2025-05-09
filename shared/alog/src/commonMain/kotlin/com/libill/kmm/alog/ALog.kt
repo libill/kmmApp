@@ -1,11 +1,8 @@
 package com.libill.kmm.alog
 
-import kotlin.native.concurrent.SharedImmutable
-
 /**
  * ALog日志打印，Android使用 ALog.i(tag, message)
  */
-@SharedImmutable
 val ALog: IALog by lazy { ALogImpl() }
 
 /**
